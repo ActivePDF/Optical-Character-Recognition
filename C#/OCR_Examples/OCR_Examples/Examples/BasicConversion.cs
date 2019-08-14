@@ -1,6 +1,4 @@
 ﻿
-using System;
-
 namespace OCR_Examples.Examples
 {
     class BasicConversion
@@ -19,8 +17,9 @@ namespace OCR_Examples.Examples
             // Convert the file to PDF
             OCRDK.Results.OCRResult result =
                 ocr.Convert(
-                    $"{strPath}..\\..\\..\\Input\\OCR.TIF.Input.tif",
-                    $"{strPath}..\\..\\..\\Output\\OCR.BasicConversion.Output.pdf");
+                    inputFile: $"{strPath}..\\..\\..\\Input\\OCR.TIF.Input.tif",
+                    outputFile: $"{strPath}..\\..\\..\\Output\\OCR.BasicConversion.Output.pdf");
+
             WriteResult.Write(result);
         }
     }

@@ -1,12 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿
+using System;
 
 namespace OCR_Examples.Examples
 {
-    class SetMetadata
+    class RecognizedInformation
     {
         public static void Example()
         {
@@ -15,21 +12,22 @@ namespace OCR_Examples.Examples
             // Instantiate Object
             APOCR.Net45.OCR ocr = new APOCR.Net45.OCR();
 
+            // Keep the recognized data after the conversion
+            ocr.Settings.KeepRecognizedText = true;
+
             // Enable extra logging (logging should only be used while
             // troubleshooting) C:\ProgramData\activePDF\Logs\
             ocr.Settings.Debug = true;
-
-            // PDF Metadata
-            ocr.Settings.PDF.Metadata.Author = "John Doe";
-            ocr.Settings.PDF.Metadata.Title = "OCR Example";
-            ocr.Settings.PDF.Metadata.Subject = "Example";
-            ocr.Settings.PDF.Metadata.Keywords = "OCR, example, metadata";
 
             // Convert the file to PDF
             OCRDK.Results.OCRResult result =
                 ocr.Convert(
                     inputFile: $"{strPath}..\\..\\..\\Input\\OCR.TIF.Input.tif",
-                    outputFile: $"{strPath}..\\..\\..\\Output\\OCR.SetMetadata.Output.pdf");
+                    outputFile: $"{strPath}..\\..\\..\\Output\\OCR.RecognizedInformation.Output.pdf");
+
+            // Output recognized text
+            Console.WriteLine(ocr.RecognizedInformation.DocumentText + System.Environment.NewLine);
+
             WriteResult.Write(result);
         }
     }

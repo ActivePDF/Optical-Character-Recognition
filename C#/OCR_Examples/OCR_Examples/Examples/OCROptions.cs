@@ -27,8 +27,8 @@ namespace OCR_Examples.Examples
             // Convert the file to PDF
             OCRDK.Results.OCRResult result =
                 ocr.Convert(
-                    $"{strPath}..\\..\\..\\Input\\OCR.TIF.Input.tif",
-                    $"{strPath}..\\..\\..\\Output\\OCR.OCROptions.Output.pdf");
+                    inputFile: $"{strPath}..\\..\\..\\Input\\OCR.TIF.Input.tif",
+                    outputFile: $"{strPath}..\\..\\..\\Output\\OCR.OCROptions.Output.pdf");
             WriteResult.Write(result);
         }
     }

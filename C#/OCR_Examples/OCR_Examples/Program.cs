@@ -12,11 +12,16 @@ namespace OCR_Examples
         static void Main(string[] args)
         {
             Examples.BasicConversion.Example();
-            Examples.KeepRecognizedText.Example();
             Examples.CompressionOptions.Example();
-            Examples.SetMetadata.Example();
+            Examples.KeepRecognizedText.Example();
+            Examples.LinearizeFile.Example();
             Examples.OCROptions.Example();
+            Examples.OverwriteMethod.Example();
+            Examples.RecognizedInformation.Example();
+            Examples.RemoteConversion.Example();
+            Examples.SetMetadata.Example();
             Examples.SetPDFSecurity.Example();
+            Examples.SubmitViaRest.Example();
             Examples.Timeout.Example();
             Console.WriteLine("Press any key to exit."); 
             Console.ReadKey();

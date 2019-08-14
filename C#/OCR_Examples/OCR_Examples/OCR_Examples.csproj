@@ -34,7 +34,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="APOCR.Net45">
-      <HintPath>..\..\..\..\..\..\Program Files\ActivePDF\OCR\Bin\APOCR.Net45.dll</HintPath>
+      <HintPath>C:\Program Files\ActivePDF\OCR\Bin\APOCR.Net45.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -49,9 +49,14 @@
     <Compile Include="Examples\BasicConversion.cs" />
     <Compile Include="Examples\CompressionOptions.cs" />
     <Compile Include="Examples\KeepRecognizedText.cs" />
+    <Compile Include="Examples\LinearizeFile.cs" />
     <Compile Include="Examples\OCROptions.cs" />
+    <Compile Include="Examples\OverwriteMethod.cs" />
+    <Compile Include="Examples\RecognizedInformation.cs" />
+    <Compile Include="Examples\RemoteConversion.cs" />
     <Compile Include="Examples\SetMetadata.cs" />
     <Compile Include="Examples\SetPDFSecurity.cs" />
+    <Compile Include="Examples\SubmitViaRest.cs" />
     <Compile Include="Examples\Timeout.cs" />
     <Compile Include="Examples\WriteResult.cs" />
     <Compile Include="Program.cs" />

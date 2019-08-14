@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿
 namespace OCR_Examples.Examples
 {
     class CompressionOptions
@@ -32,8 +27,8 @@ namespace OCR_Examples.Examples
             // Convert the file to PDF
             OCRDK.Results.OCRResult result =
                 ocr.Convert(
-                    $"{strPath}..\\..\\..\\Input\\OCR.TIF.Input.tif",
-                    $"{strPath}..\\..\\..\\Output\\OCR.CompressionOptions.Output.pdf");
+                    inputFile: $"{strPath}..\\..\\..\\Input\\OCR.TIF.Input.tif",
+                    outputFile: $"{strPath}..\\..\\..\\Output\\OCR.CompressionOptions.Output.pdf");
             WriteResult.Write(result);
         }
     }

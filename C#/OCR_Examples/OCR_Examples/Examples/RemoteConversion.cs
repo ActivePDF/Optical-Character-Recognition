@@ -1,12 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿
 namespace OCR_Examples.Examples
 {
-    class SetMetadata
+    class RemoteConversion
     {
         public static void Example()
         {
@@ -15,21 +10,20 @@ namespace OCR_Examples.Examples
             // Instantiate Object
             APOCR.Net45.OCR ocr = new APOCR.Net45.OCR();
 
+            // Remote connection settings           
+            ocr.Settings.ServerAddress = "127.0.0.1";
+            ocr.Settings.PortNumber = 62625;
+
             // Enable extra logging (logging should only be used while
             // troubleshooting) C:\ProgramData\activePDF\Logs\
             ocr.Settings.Debug = true;
-
-            // PDF Metadata
-            ocr.Settings.PDF.Metadata.Author = "John Doe";
-            ocr.Settings.PDF.Metadata.Title = "OCR Example";
-            ocr.Settings.PDF.Metadata.Subject = "Example";
-            ocr.Settings.PDF.Metadata.Keywords = "OCR, example, metadata";
 
             // Convert the file to PDF
             OCRDK.Results.OCRResult result =
                 ocr.Convert(
                     inputFile: $"{strPath}..\\..\\..\\Input\\OCR.TIF.Input.tif",
-                    outputFile: $"{strPath}..\\..\\..\\Output\\OCR.SetMetadata.Output.pdf");
+                    outputFile: $"{strPath}..\\..\\..\\Output\\OCR.RemoteConversion.Output.pdf");
+
             WriteResult.Write(result);
         }
     }

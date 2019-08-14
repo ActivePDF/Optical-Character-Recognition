@@ -1,12 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿
 namespace OCR_Examples.Examples
 {
-    class SetMetadata
+    class LinearizeFile
     {
         public static void Example()
         {
@@ -19,17 +14,15 @@ namespace OCR_Examples.Examples
             // troubleshooting) C:\ProgramData\activePDF\Logs\
             ocr.Settings.Debug = true;
 
-            // PDF Metadata
-            ocr.Settings.PDF.Metadata.Author = "John Doe";
-            ocr.Settings.PDF.Metadata.Title = "OCR Example";
-            ocr.Settings.PDF.Metadata.Subject = "Example";
-            ocr.Settings.PDF.Metadata.Keywords = "OCR, example, metadata";
+            // Linearize the output PDF
+            ocr.Settings.PDF.Linearize = true;
 
             // Convert the file to PDF
             OCRDK.Results.OCRResult result =
                 ocr.Convert(
                     inputFile: $"{strPath}..\\..\\..\\Input\\OCR.TIF.Input.tif",
-                    outputFile: $"{strPath}..\\..\\..\\Output\\OCR.SetMetadata.Output.pdf");
+                    outputFile: $"{strPath}..\\..\\..\\Output\\OCR.LinearizeFile.Output.pdf");
+
             WriteResult.Write(result);
         }
     }
