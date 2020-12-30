@@ -18,7 +18,7 @@ namespace OCR_Examples.Examples
             ocr.Settings.OCR.Deskew = OCRData.Enums.ImageProcessing.DeskewOptions.Auto2D;
             ocr.Settings.OCR.Despeckled = true;
             ocr.Settings.OCR.ExportBookmarks = false;
-            ocr.Settings.OCR.OCRType = OCRData.Enums.OCR.OCRTypeOptions.SearchablePDF;
+            ocr.Settings.OCRType = OCRData.Enums.OCR.OCRTypeOptions.SearchablePDF;
             ocr.Settings.OCR.PictureHandling = OCRData.Enums.OCR.PictureHandlingOptions.Default;
             ocr.Settings.OCR.RetainLineNumbering = false;
             ocr.Settings.OCR.Rotation = OCRData.Enums.ImageProcessing.RotationOptions.Auto;
